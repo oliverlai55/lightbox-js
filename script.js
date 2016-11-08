@@ -1,4 +1,4 @@
-
+// Set Picture object, put functions inside the object, add display true or false boolean
 
 function expand() {
 
