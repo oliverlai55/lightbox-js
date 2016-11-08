@@ -14,6 +14,7 @@ function expand() {
 
 function closePic() {
   document.getElementById('overlay-pic').setAttribute('id', 'pic1');
+  document.getElementById('close-icon').style.display = "none";
 }
 // 1. Add attribute to selected picture
 // 2. make that picture expand in width with black div blackground
