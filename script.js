@@ -6,4 +6,5 @@ function expand() {
 }
 
 // 1. Add attribute to selected picture
+//look into .setAttribute('')
 // 2. make that picture expand in width with black div blackground
