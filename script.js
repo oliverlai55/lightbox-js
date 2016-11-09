@@ -1,7 +1,12 @@
 // Set Picture object, put functions inside the object, add display true or false boolean
 
-function expand() {
+// pic = {
+//   alert = function() {
+//     alert("yep");
+//   }
+// }
 
+function expand() {
   console.log('fire off');
 
     document.getElementById('pic1').setAttribute('id', 'overlay-pic');
@@ -19,3 +24,13 @@ function closePic() {
 // 1. Add attribute to selected picture
 //look into .setAttribute('')
 // 2. make that picture expand in width with black div blackground
+// document.getElementById('pic1').addEventListener('click', function() {
+//   console.log(document.getElementsByClassName('picture'));
+
+var pictureClass = document.getElementsByClassName('picture')
+
+for (var i = 0; i < pictureClass.length; i++) {
+  pictureClass[i].addEventListener('click', function() {
+    console.log(pictureClass[0]);
+  });
+}
