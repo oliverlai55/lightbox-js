@@ -30,7 +30,10 @@ function closePic() {
 var pictureClass = document.getElementsByClassName('picture')
 
 for (var i = 0; i < pictureClass.length; i++) {
-  pictureClass[i].addEventListener('click', function() {
-    console.log(pictureClass[0]);
+  // var position = pictureClass[i]
+  pictureClass[i].addEventListener('click', function(position) {
+    console.log(position.target.id);
+    var pictureId = position.target.id;
+    document.getElementById(pictureId).setAttribute('id', 'overlay-pic');
   });
 }
