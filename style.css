@@ -1,18 +1,13 @@
 
-#overlay-pic {
+/*#overlay-pic {
   width: 60%;
   border: black;
-}
+}*/
 
-#pic1 {
-  border: black;
+.picture {
   width: 20%;
 }
 
-#pic2 {
-  width: 20%;
-}
-
-#pic3 {
-  width: 20%;
+.expand {
+  width: 100%;
 }
