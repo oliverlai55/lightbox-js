@@ -8,6 +8,14 @@
   width: 20%;
 }
 
+.picture-collection {
+  display: none;
+}
+
 .expand {
-  width: 100%;
+  width: 50%;
+}
+
+#display-pic {
+  width: 40%;
 }
