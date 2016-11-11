@@ -26,18 +26,20 @@ function closePic() {
 //   console.log(document.getElementsByClassName('picture'));
 
 
-
-
-//The initial function that loads the [0] pic
-function loadInitialPic() {
   var pictureClass = document.getElementsByClassName('picture')
   var initialPic = pictureClass[0].getAttribute('src')
+  var currentPic = pictureClass[0].getAttribute('src')
+  var nextPic;
+//The initial function that loads the [0] pic
+function loadInitialPic() {
   document.getElementById('display-pic').setAttribute('src', initialPic);
 }
 
 
 //Need to right a function that scrolls to the next index + 1 pic
+function loadNextPic() {
 
+}
 
 for (var i = 0; i < pictureClass.length; i++) {
   // var position = pictureClass[i]
