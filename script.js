@@ -26,7 +26,18 @@ function closePic() {
 //   console.log(document.getElementsByClassName('picture'));
 
 
-var pictureClass = document.getElementsByClassName('picture')
+
+
+//The initial function that loads the [0] pic
+function loadInitialPic() {
+  var pictureClass = document.getElementsByClassName('picture')
+  var initialPic = pictureClass[0].getAttribute('src')
+  document.getElementById('display-pic').setAttribute('src', initialPic);
+}
+
+
+//Need to right a function that scrolls to the next index + 1 pic
+
 
 for (var i = 0; i < pictureClass.length; i++) {
   // var position = pictureClass[i]
@@ -36,7 +47,7 @@ for (var i = 0; i < pictureClass.length; i++) {
     // console.log(position.target.id);
     var pictureId = position.target.id;
     document.getElementById(pictureId).classList.add('expand');
-    console.log(document.getElementById(pictureId).classList);
+    // console.log(document.getElementById(pictureId).classList);
     document.getElementById('close-icon').style.display = "inline";
   });
 }
