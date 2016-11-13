@@ -1,21 +1,19 @@
 // Set Picture object, put functions inside the object, add display true or false boolean
-
-// pic = {
-//   alert = function() {
-//     alert("yep");
-//   }
-// }
+var pictureClass = document.getElementsByClassName('picture');
+var displayPicClass = document.getElementsByClassName('display-pic')[0];
+var lightBoxClass = document.getElementsByClassName('lightbox-wrapper')[0];
+var pictureCollecction = document.getElementsByClassName('picture-collection')[0];
+var initialPic = pictureClass[0].getAttribute('src');
+var currentPic;
+var nextPic;
+var prevPic;
+var pictureArray = [];
 
 function expand() {
-  console.log('fire off');
-  console.log(displayPicClass);
-  console.log(lightBoxClass);
-//nneed to add attribute to the class, add "expand"
-
     displayPicClass.classList.add('expand');
     document.getElementById('close-icon').style.display = "inline";
     lightBoxClass.classList.add('expand-box');
-  // document.getElementById('id').innerHTML = 'yo';
+    pictureCollecction.classList.remove('display-none');
 }
 
 function closePic() {
@@ -23,23 +21,7 @@ function closePic() {
   lightBoxClass.classList.remove('expand-box');
   document.getElementById('close-icon').style.display = "none";
 }
-// 1. Add attribute to selected picture
-//look into .setAttribute('')
-// 2. make that picture expand in width with black div blackground
-// document.getElementById('pic1').addEventListener('click', function() {
-//   console.log(document.getElementsByClassName('picture'));
 
-
-  var pictureClass = document.getElementsByClassName('picture');
-  var displayPicClass = document.getElementsByClassName('display-pic')[0];
-  var lightBoxClass = document.getElementsByClassName('lightbox-wrapper')[0];
-  var initialPic = pictureClass[0].getAttribute('src');
-  var currentPic;
-  var nextPic;
-  var prevPic;
-  var pictureArray = [];
-
-//The initial function that loads the [0] pic
 function loadInitialPic() {
   console.log(displayPicClass);
   for (var i = 0; i < pictureClass.length; i++) {
@@ -49,8 +31,6 @@ function loadInitialPic() {
     displayPicClass.setAttribute('src', initialPic);
 }
 
-
-//Need to right a function that scrolls to the next index + 1 pic
 function loadNextPic() {
   currentPic = displayPicClass.getAttribute('src');
 
