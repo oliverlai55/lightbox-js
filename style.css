@@ -9,7 +9,11 @@
 }
 
 .picture-collection {
-  display: none;
+
+}
+
+.display-none {
+  display: none
 }
 
 .expand {
