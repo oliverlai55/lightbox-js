@@ -9,16 +9,18 @@
 function expand() {
   console.log('fire off');
   console.log(displayPicClass);
+  console.log(lightBoxClass);
 //nneed to add attribute to the class, add "expand"
-    
-    displayPicClass.setAttribute('style', 'height: 300px; width: 500px;');
-    document.getElementById('close-icon').style.display = "inline";
 
+    displayPicClass.classList.add('expand');
+    document.getElementById('close-icon').style.display = "inline";
+    lightBoxClass.classList.add('expand-box');
   // document.getElementById('id').innerHTML = 'yo';
 }
 
 function closePic() {
   document.getElementsByClassName('expand')[0].classList.remove('expand');
+  lightBoxClass.classList.remove('expand-box');
   document.getElementById('close-icon').style.display = "none";
 }
 // 1. Add attribute to selected picture
@@ -28,9 +30,10 @@ function closePic() {
 //   console.log(document.getElementsByClassName('picture'));
 
 
-  var pictureClass = document.getElementsByClassName('picture')
-  var displayPicClass = document.getElementsByClassName('display-pic')[0]
-  var initialPic = pictureClass[0].getAttribute('src')
+  var pictureClass = document.getElementsByClassName('picture');
+  var displayPicClass = document.getElementsByClassName('display-pic')[0];
+  var lightBoxClass = document.getElementsByClassName('lightbox-wrapper')[0];
+  var initialPic = pictureClass[0].getAttribute('src');
   var currentPic;
   var nextPic;
   var prevPic;
