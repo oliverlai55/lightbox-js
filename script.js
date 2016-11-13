@@ -8,8 +8,10 @@
 
 function expand() {
   console.log('fire off');
-
-    document.getElementById('pic1').setAttribute('id', 'overlay-pic');
+  console.log(displayPicClass);
+//nneed to add attribute to the class, add "expand"
+    
+    displayPicClass.setAttribute('style', 'height: 300px; width: 500px;');
     document.getElementById('close-icon').style.display = "inline";
 
   // document.getElementById('id').innerHTML = 'yo';
@@ -27,6 +29,7 @@ function closePic() {
 
 
   var pictureClass = document.getElementsByClassName('picture')
+  var displayPicClass = document.getElementsByClassName('display-pic')[0]
   var initialPic = pictureClass[0].getAttribute('src')
   var currentPic;
   var nextPic;
@@ -35,41 +38,42 @@ function closePic() {
 
 //The initial function that loads the [0] pic
 function loadInitialPic() {
+  console.log(displayPicClass);
   for (var i = 0; i < pictureClass.length; i++) {
     pictureArray.push(pictureClass[i].getAttribute('src'));
   }
 
-  document.getElementById('display-pic').setAttribute('src', initialPic);
+    displayPicClass.setAttribute('src', initialPic);
 }
 
 
 //Need to right a function that scrolls to the next index + 1 pic
 function loadNextPic() {
-  currentPic = document.getElementById('display-pic').getAttribute('src');
+  currentPic = displayPicClass.getAttribute('src');
 
   for (var i = 0; i < pictureArray.length; i++) {
     if (pictureArray[i] == currentPic) {
       nextPic = pictureArray[i+1];
-      document.getElementById('display-pic').setAttribute('src', nextPic);
+      displayPicClass.setAttribute('src', nextPic);
 
       if (i == (pictureArray.length - 1)) {
         nextPic = pictureArray[0]
-        document.getElementById('display-pic').setAttribute('src', nextPic);
+        displayPicClass.setAttribute('src', nextPic);
       }
     }
   }
 }
 
 function loadPrevPic() {
-  currentPic = document.getElementById('display-pic').getAttribute('src');
+  currentPic = displayPicClass.getAttribute('src');
   for (var i = 0; i < pictureArray.length; i++) {
     if (pictureArray[i] == currentPic) {
       prevPic = pictureArray[i-1];
-      document.getElementById('display-pic').setAttribute('src', prevPic);
+      displayPicClass.setAttribute('src', prevPic);
 
       if (i == 0) {
         prevPic = pictureArray[pictureArray.length - 1];
-        document.getElementById('display-pic').setAttribute('src', prevPic);
+        displayPicClass.setAttribute('src', prevPic);
       }
     }
   }
@@ -77,15 +81,15 @@ function loadPrevPic() {
 
 
 
-for (var i = 0; i < pictureClass.length; i++) {
-  // var position = pictureClass[i]
-  pictureClass[i].addEventListener('click', function(position) {
-    //change position to event
-    debugger;
-    // console.log(position.target.id);
-    var pictureId = position.target.id;
-    document.getElementById(pictureId).classList.add('expand');
-    // console.log(document.getElementById(pictureId).classList);
-    document.getElementById('close-icon').style.display = "inline";
-  });
-}
+// for (var i = 0; i < pictureClass.length; i++) {
+//   // var position = pictureClass[i]
+//   pictureClass[i].addEventListener('click', function(position) {
+//     //change position to event
+//     debugger;
+//     // console.log(position.target.id);
+//     var pictureId = position.target.id;
+//     document.getElementById(pictureId).classList.add('expand');
+//     // console.log(document.getElementById(pictureId).classList);
+//     document.getElementById('close-icon').style.display = "inline";
+//   });
+// }
