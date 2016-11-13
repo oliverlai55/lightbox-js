@@ -30,14 +30,13 @@ function closePic() {
   var initialPic = pictureClass[0].getAttribute('src')
   var currentPic;
   var nextPic;
+  var prevPic;
   var pictureArray = [];
 
 //The initial function that loads the [0] pic
 function loadInitialPic() {
   for (var i = 0; i < pictureClass.length; i++) {
-    console.log(pictureClass[i].getAttribute('src'));
     pictureArray.push(pictureClass[i].getAttribute('src'));
-    console.log(pictureArray);
   }
 
   document.getElementById('display-pic').setAttribute('src', initialPic);
@@ -56,6 +55,21 @@ function loadNextPic() {
       if (i == (pictureArray.length - 1)) {
         nextPic = pictureArray[0]
         document.getElementById('display-pic').setAttribute('src', nextPic);
+      }
+    }
+  }
+}
+
+function loadPrevPic() {
+  currentPic = document.getElementById('display-pic').getAttribute('src');
+  for (var i = 0; i < pictureArray.length; i++) {
+    if (pictureArray[i] == currentPic) {
+      prevPic = pictureArray[i-1];
+      document.getElementById('display-pic').setAttribute('src', prevPic);
+
+      if (i == 0) {
+        prevPic = pictureArray[pictureArray.length - 1];
+        document.getElementById('display-pic').setAttribute('src', prevPic);
       }
     }
   }
