@@ -28,18 +28,40 @@ function closePic() {
 
   var pictureClass = document.getElementsByClassName('picture')
   var initialPic = pictureClass[0].getAttribute('src')
-  var currentPic = pictureClass[0].getAttribute('src')
+  var currentPic;
   var nextPic;
+  var pictureArray = [];
+
 //The initial function that loads the [0] pic
 function loadInitialPic() {
+  for (var i = 0; i < pictureClass.length; i++) {
+    console.log(pictureClass[i].getAttribute('src'));
+    pictureArray.push(pictureClass[i].getAttribute('src'));
+    console.log(pictureArray);
+  }
+
   document.getElementById('display-pic').setAttribute('src', initialPic);
 }
 
 
 //Need to right a function that scrolls to the next index + 1 pic
 function loadNextPic() {
+  currentPic = document.getElementById('display-pic').getAttribute('src');
 
+  for (var i = 0; i < pictureArray.length; i++) {
+    if (pictureArray[i] == currentPic) {
+      nextPic = pictureArray[i+1];
+      document.getElementById('display-pic').setAttribute('src', nextPic);
+
+      if (i == (pictureArray.length - 1)) {
+        nextPic = pictureArray[0]
+        document.getElementById('display-pic').setAttribute('src', nextPic);
+      }
+    }
+  }
 }
+
+
 
 for (var i = 0; i < pictureClass.length; i++) {
   // var position = pictureClass[i]
