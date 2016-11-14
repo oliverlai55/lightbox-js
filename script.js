@@ -3,27 +3,38 @@ var pictureClass = document.getElementsByClassName('picture');
 var displayPicClass = document.getElementsByClassName('display-pic')[0];
 var lightBoxClass = document.getElementsByClassName('lightbox-wrapper')[0];
 var pictureCollecction = document.getElementsByClassName('picture-collection')[0];
+var carouselPics = document.getElementsByClassName('carousel-pics');
 var initialPic = pictureClass[0].getAttribute('src');
 var currentPic;
 var nextPic;
 var prevPic;
 var pictureArray = [];
+var carouselArray = [];
 
 function expand() {
     displayPicClass.classList.add('expand');
     document.getElementById('close-icon').style.display = "inline";
     lightBoxClass.classList.add('expand-box');
-    pictureCollecction.classList.remove('display-none');
+    // pictureCollecction.classList.remove('display-none');
+
+    for (var i = 0; i <= 2; i++) {
+      carouselArray.push(pictureArray[i])
+      console.log(carouselArray);
+      carouselPics[i].setAttribute('src', carouselArray[i]);
+    }
+
+    console.log(document.getElementsByClassName('carousel-pics'));
+
 }
 
 function closePic() {
   document.getElementsByClassName('expand')[0].classList.remove('expand');
   lightBoxClass.classList.remove('expand-box');
   document.getElementById('close-icon').style.display = "none";
+  pictureCollecction.classList.add('display-none');
 }
 
 function loadInitialPic() {
-  console.log(displayPicClass);
   for (var i = 0; i < pictureClass.length; i++) {
     pictureArray.push(pictureClass[i].getAttribute('src'));
   }
@@ -43,8 +54,12 @@ function loadNextPic() {
         nextPic = pictureArray[0]
         displayPicClass.setAttribute('src', nextPic);
       }
+
+      
     }
   }
+
+
 }
 
 function loadPrevPic() {
