@@ -52,10 +52,17 @@ function loadNextPic() {
 
       if (i == (pictureArray.length - 1)) {
         nextPic = pictureArray[0]
+        secondPic = pictureArray
         displayPicClass.setAttribute('src', nextPic);
+
+        carouselPics[0].setAttribute('src', nextPic);
+        carouselPics[1].setAttribute('src', pictureArray[i+2]);
+        carouselPics[2].setAttribute('src', pictureArray[i+3]);
       }
 
-      
+      carouselPics[0].setAttribute('src', nextPic);
+      carouselPics[1].setAttribute('src', pictureArray[i+2]);
+      carouselPics[2].setAttribute('src', pictureArray[i+3]);
     }
   }
 
