@@ -42,6 +42,9 @@ function loadInitialPic() {
     displayPicClass.setAttribute('src', initialPic);
 }
 
+//Try making the DOM of carousel pic render all pictures, but only have the first 3
+//display , the others are display none
+// Have a counter??
 function loadNextPic() {
   currentPic = displayPicClass.getAttribute('src');
 
@@ -49,25 +52,28 @@ function loadNextPic() {
     if (pictureArray[i] == currentPic) {
       nextPic = pictureArray[i+1];
       displayPicClass.setAttribute('src', nextPic);
-
-      if (i == (pictureArray.length - 1)) {
-        nextPic = pictureArray[0]
-        secondPic = pictureArray
-        displayPicClass.setAttribute('src', nextPic);
-
-        carouselPics[0].setAttribute('src', nextPic);
-        carouselPics[1].setAttribute('src', pictureArray[i+2]);
-        carouselPics[2].setAttribute('src', pictureArray[i+3]);
-      }
-
       carouselPics[0].setAttribute('src', nextPic);
       carouselPics[1].setAttribute('src', pictureArray[i+2]);
       carouselPics[2].setAttribute('src', pictureArray[i+3]);
+
+      if (i == (pictureArray.length - 3)) {
+        console.log('now');
+        carouselPics[0].setAttribute('src', currentPic);
+        carouselPics[1].setAttribute('src', pictureArray[1]);
+        carouselPics[2].setAttribute('src', pictureArray[2]);
+      }
+      if (i == (pictureArray.length - 1)) {
+        nextPic = pictureArray[0]
+        displayPicClass.setAttribute('src', nextPic);
+
+
+
+      }
     }
   }
-
-
 }
+
+
 
 function loadPrevPic() {
   currentPic = displayPicClass.getAttribute('src');
