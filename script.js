@@ -70,19 +70,24 @@ function loadNextPic() {
 }
 
 
-
 function loadPrevPic() {
   currentPic = displayPicClass.getAttribute('src');
   for (var i = 0; i < pictureArray.length; i++) {
     if (pictureArray[i] == currentPic) {
+      console.log('remaining');
       prevPic = pictureArray[i-1];
       displayPicClass.setAttribute('src', prevPic);
-      carouselPics[0]
+      carouselPics[0].setAttribute('src', pictureArray[i-2]);
+      carouselPics[1].setAttribute('src', prevPic);
+      carouselPics[2].setAttribute('src', pictureArray[i]);
 
 
       if (i == 0) {
+        console.log('previus from start');
         prevPic = pictureArray[pictureArray.length - 1];
         displayPicClass.setAttribute('src', prevPic);
+        carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 2]);
+        carouselPics[1].setAttribute('src', prevPic);
       }
     }
   }
