@@ -16,7 +16,6 @@ function expand() {
     document.getElementById('close-icon').style.display = "inline";
     lightBoxClass.classList.add('expand-box');
     // pictureCollecction.classList.remove('display-none');
-
     carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 1]);
     carouselPics[1].setAttribute('src', initialPic);
     carouselPics[2].setAttribute('src', pictureArray[1]);
@@ -52,7 +51,6 @@ function loadNextPic() {
       carouselPics[1].setAttribute('src', nextPic);
       carouselPics[2].setAttribute('src', pictureArray[i+2]);
 
-      //
       if (i == (pictureArray.length - 2)) {
         console.log('2ndtolast');
         carouselPics[2].setAttribute('src', pictureArray[0]);
