@@ -18,6 +18,7 @@
      <div class="container-fluid">
          <div class="lightbox-wrapper col-sm-12">
              <h3>LightBox</h3>
+
              <a href="#"><i id="close-icon" style="display: none;" onclick="closePic()" class="fa fa-times" aria-hidden="true"></i></a>
              <div class="picture-collection display-none">
                  <img id="pic1" class="picture" src="taiwan.jpeg" />
@@ -30,13 +31,19 @@
                  <img class="carousel-pics" />
                  <img class="carousel-pics" />
              </div>
-             <div class="display-box">
-                 <a href="#">
-                 <i class="fa fa-chevron-left" onclick="loadPrevPic()" aria-hideen="true"></i>
-                 <img class="display-pic"  onclick="expand()" src="" />
-                 <i class="fa fa-chevron-right" onclick="loadNextPic()" aria-hideen="true"></i>
-                 </a>
+
+             <div class="display-box col-sm-12">
+
+
+
+                  <a href="#" class="arrow-left"><i class="fa fa-chevron-left" onclick="loadPrevPic()" aria-hideen="true"></i></a>
+
+                 <img class="display-pic" src="" />
+                 <a href="#"><i class="fa fa-chevron-right" onclick="loadNextPic()" aria-hideen="true"></i></a>
+               </div>
+
              </div>
+             <button type="button" class="btn btn-primary" onclick="expand()">Expand</button>
           </div>
 
           <button type="button" class="btn btn-primary">Add Picture</button>
