@@ -4,6 +4,10 @@
   border: black;
 }*/
 
+.lightbox-wrapper {
+  text-align: center;
+}
+
 .picture {
  width: 200px;
  height: 100px;
