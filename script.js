@@ -88,6 +88,11 @@ function loadPrevPic() {
         displayPicClass.setAttribute('src', prevPic);
         carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 2]);
         carouselPics[1].setAttribute('src', prevPic);
+
+      }
+
+      if (i == 1) {
+        carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 1]);
       }
     }
   }
