@@ -108,8 +108,11 @@ function readURL(){
     var file = document.getElementById("getval").files[0];
     var reader = new FileReader();
     reader.onloadend = function(){
-        document.getElementById('clock2').setAttribute('src', reader.result);
-        console.log(document.getElementById('clock').style);
+        pictureArray.push(reader.result);
+        // document.getElementById('clock2').setAttribute('src', reader.result);
+        // console.log(document.getElementById('clock').style);
+        console.log(pictureArray);
+        console.log(pictureArray.length);
     }
     if(file){
         reader.readAsDataURL(file);
