@@ -51,12 +51,17 @@ function loadInitialPic() {
 // Have a counter??
 function loadNextPic() {
   currentPic = displayPicClass.getAttribute('src');
+  displayPicClass.classList.add('fade-in');
+  setTimeout(function(){
+    displayPicClass.classList.remove('fade-in');}, 1000);
 
   for (var i = 0; i < pictureArray.length; i++) {
-    console.log(i);
+
     if (pictureArray[i] == currentPic) {
       nextPic = pictureArray[i+1];
       displayPicClass.setAttribute('src', nextPic);
+
+
       carouselPics[0].setAttribute('src', pictureArray[i]);
       carouselPics[1].setAttribute('src', nextPic);
       carouselPics[2].setAttribute('src', pictureArray[i+2]);
@@ -79,6 +84,10 @@ function loadNextPic() {
 
 function loadPrevPic() {
   currentPic = displayPicClass.getAttribute('src');
+  displayPicClass.classList.add('fade-in');
+  setTimeout(function(){
+    displayPicClass.classList.remove('fade-in');}, 1000);
+    
   for (var i = 0; i < pictureArray.length; i++) {
     if (pictureArray[i] == currentPic) {
       prevPic = pictureArray[i-1];
