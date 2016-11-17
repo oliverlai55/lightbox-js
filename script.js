@@ -12,6 +12,7 @@ var pictureArray = [];
 var carouselArray = [];
 
 function expand() {
+    document.getElementsByClassName('carousel-box')[0].classList.remove('display-none');
     displayPicClass.classList.add('expand');
     document.getElementById('close-icon').style.display = "inline";
     lightBoxClass.classList.add('expand-box');
@@ -25,6 +26,7 @@ function expand() {
 
 function closePic() {
   document.getElementsByClassName('expand')[0].classList.remove('expand');
+  document.getElementsByClassName('carousel-box')[0].classList.add('display-none');
   lightBoxClass.classList.remove('expand-box');
   document.getElementById('close-icon').style.display = "none";
   pictureCollecction.classList.add('display-none');
@@ -36,6 +38,7 @@ function closePic() {
 }
 
 function loadInitialPic() {
+
   for (var i = 0; i < pictureClass.length; i++) {
     pictureArray.push(pictureClass[i].getAttribute('src'));
   }
@@ -50,6 +53,7 @@ function loadNextPic() {
   currentPic = displayPicClass.getAttribute('src');
 
   for (var i = 0; i < pictureArray.length; i++) {
+    console.log(i);
     if (pictureArray[i] == currentPic) {
       nextPic = pictureArray[i+1];
       displayPicClass.setAttribute('src', nextPic);
@@ -58,18 +62,15 @@ function loadNextPic() {
       carouselPics[2].setAttribute('src', pictureArray[i+2]);
 
       if (i == (pictureArray.length - 2)) {
-        console.log('2ndtolast');
         carouselPics[2].setAttribute('src', pictureArray[0]);
       }
 
       if (i == (pictureArray.length - 1)) {
-        console.log('last');
         nextPic = pictureArray[0]
         displayPicClass.setAttribute('src', nextPic);
         carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 1]);
         carouselPics[1].setAttribute('src', nextPic);
         carouselPics[2].setAttribute('src', pictureArray[1])
-
       }
     }
   }
@@ -80,7 +81,6 @@ function loadPrevPic() {
   currentPic = displayPicClass.getAttribute('src');
   for (var i = 0; i < pictureArray.length; i++) {
     if (pictureArray[i] == currentPic) {
-      console.log('remaining');
       prevPic = pictureArray[i-1];
       displayPicClass.setAttribute('src', prevPic);
       carouselPics[0].setAttribute('src', pictureArray[i-2]);
