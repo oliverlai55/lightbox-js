@@ -20,6 +20,7 @@ function expand() {
     carouselPics[1].setAttribute('src', initialPic);
     carouselPics[2].setAttribute('src', pictureArray[1]);
 
+    displayPicClass.setAttribute('onclick', 'closePic()');
 }
 
 function closePic() {
@@ -27,6 +28,11 @@ function closePic() {
   lightBoxClass.classList.remove('expand-box');
   document.getElementById('close-icon').style.display = "none";
   pictureCollecction.classList.add('display-none');
+  displayPicClass.setAttribute('onclick', 'expand()');
+
+  for (var i = 0; i < carouselPics.length; i++) {
+    carouselPics[i].setAttribute('src', '');
+  }
 }
 
 function loadInitialPic() {
@@ -80,7 +86,6 @@ function loadPrevPic() {
       carouselPics[0].setAttribute('src', pictureArray[i-2]);
       carouselPics[1].setAttribute('src', prevPic);
       carouselPics[2].setAttribute('src', pictureArray[i]);
-
 
       if (i == 0) {
         console.log('previus from start');
