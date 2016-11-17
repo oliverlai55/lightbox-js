@@ -103,7 +103,19 @@ function loadPrevPic() {
   }
 }
 
-
+document.getElementById('getval').addEventListener('change', readURL, true);
+function readURL(){
+    var file = document.getElementById("getval").files[0];
+    var reader = new FileReader();
+    reader.onloadend = function(){
+        document.getElementById('clock2').setAttribute('src', reader.result);
+        console.log(document.getElementById('clock').style);
+    }
+    if(file){
+        reader.readAsDataURL(file);
+    }else{
+    }
+}
 
 // for (var i = 0; i < pictureClass.length; i++) {
 //   // var position = pictureClass[i]
