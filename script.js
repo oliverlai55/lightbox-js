@@ -87,7 +87,7 @@ function loadPrevPic() {
   displayPicClass.classList.add('fade-in');
   setTimeout(function(){
     displayPicClass.classList.remove('fade-in');}, 1000);
-    
+
   for (var i = 0; i < pictureArray.length; i++) {
     if (pictureArray[i] == currentPic) {
       prevPic = pictureArray[i-1];
