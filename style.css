@@ -19,7 +19,12 @@
 }
 
 .carousel-pics {
-  width: 10%;
+  width: 234px;
+  height: 164px;
+}
+
+.carousel-box {
+  margin-top: 2%;
 }
 
 .display-none {
@@ -27,8 +32,8 @@
 }
 
 .expand {
-  width: 600px !important;
-  height: 400px !important;
+  width: 700px !important;
+  height: 500px !important;
   border: 4px solid #fff;
 }
 
