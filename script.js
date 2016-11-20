@@ -21,7 +21,8 @@ function expand() {
     carouselPics[1].setAttribute('src', initialPic);
     carouselPics[2].setAttribute('src', pictureArray[1]);
 
-    displayPicClass.setAttribute('onclick', 'closePic()');
+    // displayPicClass.setAttribute('onclick', 'closePic()');
+    document.getElementsByClassName('button-box')[0].classList.add('display-none');
 }
 
 function closePic() {
@@ -30,7 +31,8 @@ function closePic() {
   lightBoxClass.classList.remove('expand-box');
   document.getElementById('close-icon').style.display = "none";
   pictureCollecction.classList.add('display-none');
-  displayPicClass.setAttribute('onclick', 'expand()');
+  // displayPicClass.setAttribute('onclick', 'expand()');
+      document.getElementsByClassName('button-box')[0].classList.remove('display-none');
 
   for (var i = 0; i < carouselPics.length; i++) {
     carouselPics[i].setAttribute('src', '');
@@ -112,6 +114,11 @@ function loadPrevPic() {
   }
 }
 
+
+function uploadPic() {
+  console.log(document.getElementsByClassName('fileupload')[0]);
+  document.getElementsByClassName('fileupload')[0].classList.remove('display-none');
+}
 document.getElementById('getval').addEventListener('change', readURL, true);
 function readURL(){
     var file = document.getElementById("getval").files[0];
