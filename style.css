@@ -4,14 +4,18 @@
   border: black;
 }*/
 
+.lightbox-logo {
+  margin-top: 4%;
+  /*margin-bottom: 2%;*/
+}
 
 .lightbox-wrapper {
   text-align: center;
 }
 
-.lightbox-title {
+/*.lightbox-title {
   margin-top: 3%;
-}
+}*/
 
 .picture {
  width: 200px;
@@ -23,7 +27,7 @@
 }
 
 .display-pic {
-  box-shadow: 0px 0px 10px 1px #000;
+  box-shadow: 0px 0px 5px 1px #000;
 }
 
 .carousel-pics {
@@ -55,6 +59,7 @@
 .expand-box {
   background-color: rgba(40, 40, 40, 1);
   height: 100vh;
+  padding-bottom: 4%;
 }
 
 #clock{

@@ -19,11 +19,12 @@ function expand() {
     lightBoxClass.classList.add('expand-box');
     // pictureCollecction.classList.remove('display-none');
 
-    for (var i = 0; i < pictureArray.length; i++) {
-      if ( displayPicClass.getAttribute('src') === pictureArray[i] ) {
-        carouselPics[1].setAttribute('src', pictureArray[i]);
+      if ( displayPicClass.getAttribute('src') === pictureArray[0] ) {
+        carouselPics[0].setAttribute('src', pictureArray[pictureArray.length-1])
+        carouselPics[1].setAttribute('src', pictureArray[0]);
+        carouselPics[2].setAttribute('src', pictureArray[1]);
       }
-    }
+
     // carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 1]);
     // carouselPics[1].setAttribute('src', displayPicClass.getAttribute('src'));
     // carouselPics[2].setAttribute('src', pictureArray[1]);
