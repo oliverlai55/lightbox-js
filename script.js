@@ -19,9 +19,14 @@ function expand() {
     lightBoxClass.classList.add('expand-box');
     // pictureCollecction.classList.remove('display-none');
 
-    carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 1]);
-    carouselPics[1].setAttribute('src', displayPicClass.getAttribute('src'));
-    carouselPics[2].setAttribute('src', pictureArray[1]);
+    for (var i = 0; i < pictureArray.length; i++) {
+      if ( displayPicClass.getAttribute('src') === pictureArray[i] ) {
+        carouselPics[1].setAttribute('src', pictureArray[i]);
+      }
+    }
+    // carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 1]);
+    // carouselPics[1].setAttribute('src', displayPicClass.getAttribute('src'));
+    // carouselPics[2].setAttribute('src', pictureArray[1]);
 
     // displayPicClass.setAttribute('onclick', 'closePic()');
     document.getElementsByClassName('button-box')[0].classList.add('display-none');
