@@ -9,6 +9,10 @@
   text-align: center;
 }
 
+.lightbox-title {
+  margin-top: 3%;
+}
+
 .picture {
  width: 200px;
  height: 100px;
@@ -71,9 +75,16 @@
   margin-top: 1%;
 }
 
-.blue-btn {
+.expand-add-btn {
   width: 224px;
   border-radius: 0;
+  color: black;
+  border: 1px solid black;
+}
+
+.expand-add-btn:hover {
+  background-color: black;
+  color: #fff;
 }
 
 .fa-chevron-right {

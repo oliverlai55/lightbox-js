@@ -12,13 +12,15 @@ var pictureArray = [];
 var carouselArray = [];
 
 function expand() {
+  console.log(displayPicClass.getAttribute('src'));
     document.getElementsByClassName('carousel-box')[0].classList.remove('display-none');
     displayPicClass.classList.add('expand');
-    document.getElementById('close-icon').style.display = "inline";
+    document.getElementsByClassName('fa-times')[0].classList.remove('display-none');
     lightBoxClass.classList.add('expand-box');
     // pictureCollecction.classList.remove('display-none');
+
     carouselPics[0].setAttribute('src', pictureArray[pictureArray.length - 1]);
-    carouselPics[1].setAttribute('src', initialPic);
+    carouselPics[1].setAttribute('src', displayPicClass.getAttribute('src'));
     carouselPics[2].setAttribute('src', pictureArray[1]);
 
     // displayPicClass.setAttribute('onclick', 'closePic()');
@@ -38,6 +40,8 @@ function closePic() {
     carouselPics[i].setAttribute('src', '');
   }
 }
+
+
 
 function loadInitialPic() {
 

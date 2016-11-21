@@ -17,8 +17,8 @@
  <body>
      <div class="container-fluid">
          <div class="lightbox-wrapper col-sm-12">
-             <h3>LightBox</h3>
-             <a href="#"><i id="close-icon" style="display: none;" onclick="closePic()" class="fa fa-times" aria-hidden="true"></i></a>
+             <h1 class="lightbox-title">LightBox</h1>
+
              <div class="picture-collection display-none">
                  <img id="pic1" class="picture" src="img/taiwan.jpeg" />
                  <img id="pic2" class="picture" src="img/taiwan2.jpeg" />
@@ -26,6 +26,7 @@
                  <img id="pic4" class="picture" src="img/taiwan4.jpeg" />
               </div>
              <div class="display-box col-sm-12">
+                  <a href="#"><i id="close-icon" onclick="closePic()" class="fa fa-times display-none" aria-hidden="true"></i></a>
                   <a href="#" class="arrow-left"><i class="fa fa-chevron-left" onclick="loadPrevPic()" aria-hideen="true"></i></a>
                  <img class="display-pic" src="" />
                  <a href="#"><i class="fa fa-chevron-right" onclick="loadNextPic()" aria-hideen="true"></i></a>
@@ -35,8 +36,8 @@
                </div>
 
              <div class="button-box col-sm-12">
-                 <button type="button" class="btn btn-outline-primary blue-btn" onclick="expand()">Expand</button>
-                 <button type="button" class="btn btn-outline-primary blue-btn" onclick="uploadPic()">Add Picture</button>
+                 <button type="button" class="btn btn-outline-secondary expand-add-btn" onclick="expand()">Expand</button>
+                 <button type="button" class="btn btn-outline-secondary expand-add-btn" onclick="uploadPic()">Add Picture</button>
                  <div class="fileupload display-none">
                      <input type='file' id='getval' /><br/><br/>
                      <!-- <div id='clock'></div> -->
