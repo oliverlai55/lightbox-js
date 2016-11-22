@@ -72,8 +72,9 @@
 
 .arrow-left {
   position: relative;
-  left: 25px;
+  left: 27px;
   color: #fff;
+  font-size: 20px;
 }
 
 
@@ -104,8 +105,9 @@
 
 .fa-chevron-right {
   position: relative;
-  right: 25px;
+  right: 27px;
   color: #fff;
+  font-size: 20px;
 }
 
 .fade-in {
