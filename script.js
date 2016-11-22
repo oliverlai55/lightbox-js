@@ -37,8 +37,8 @@ function closePic() {
   document.getElementsByClassName('expand')[0].classList.remove('expand');
   document.getElementsByClassName('carousel-box')[0].classList.add('display-none');
   lightBoxClass.classList.remove('expand-box');
-  document.getElementById('close-icon').style.display = "none";
   pictureCollecction.classList.add('display-none');
+  document.getElementsByClassName('fa-times')[0].classList.add('display-none');
   // displayPicClass.setAttribute('onclick', 'expand()');
       document.getElementsByClassName('button-box')[0].classList.remove('display-none');
 
